@@ -9,41 +9,45 @@ Assessment Requirements
 */
 
 // create a variable to hold your NFT's
-const NFTs=[]
+let NFTContainer = [];
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (name, eyecolor, shirttype, bling) {
-const NFT = {
-    "name":name,
-    "eyecolor":eyecolor,
-    "shirttype":shirttype,
-    "bling":bling
-}
-NFTs.push(NFT);
-console.log("minted"+name);
+function mintNFT(name ,country , style , height , age) {
+    let NFT = {
+        name: name,
+        country: country,
+        style: style,
+        height: height,
+        age: age,
+    }
+    NFTContainer.push(NFT);
+
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    for(let i=0;i<NFTs.length;i++){
-        console.log("\nID: \t\t"+(i+1));
-console.log("\nName: \t\t" + NFTs [i].name);
-console.log("Eyecolor : \t\t"+ NFTs [i].eyecolor);
-console.log("Shirt type:\t\t "+ NFTs [i].shirttype);
-console.log("Bling:\t\t "+ NFTs [i].bling);
+    for (let i = 0; i < NFTContainer.length; i++) {
+        console.log("\n\n--VOGUE MODELS--\n\n" );
+        console.log("Name: " + NFTContainer[i].name);
+        console.log("Country: " + NFTContainer[i].country);
+        console.log("Style: " + NFTContainer[i].style);
+        console.log("Height: " + NFTContainer[i].height);
+        console.log("Age: " + NFTContainer[i].age)
+    }
 }
-}
+
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-console.log(NFTs.length);
+    console.log("total number of NFTs are - :" + NFTContainer.length);
+
 }
 
 // call your functions below this line
-mintNFT("Shreya","brown","check","diamond");
-mintNFT("Parth","Black","check","platinum");
-mintNFT("Ramesh","Brown","check","Ruby");
-mintNFT("Rajni","black","check","Emerald");
+mintNFT("Kylie Jenner", "USA", "Casual-Steet-Style","1.68m"," 26");
+mintNFT("Gigi Hadid", "California", "All-whites","1.8m"," 29");
+mintNFT("Kendall Jenner", "Los Angeles", "Minimalist street style","1.8m","28");
+mintNFT("Cara Delevingne", "London", "Tomboy"," 1,78"," 31");
 listNFTs();
 getTotalSupply();
