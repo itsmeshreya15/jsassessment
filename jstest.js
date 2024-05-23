@@ -22,6 +22,7 @@ function mintNFT(name ,country , style , height , age) {
         age: age,
     }
     NFTContainer.push(NFT);
+   console.log("Minted "+ name);
 
 }
 
